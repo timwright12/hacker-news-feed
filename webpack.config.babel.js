@@ -2,8 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import postcssPresetEnv from 'postcss-preset-env';
-import SpriteLoaderPlugin from 'svg-sprite-loader/plugin';
-import CopyPlugin from 'copy-webpack-plugin';
+import BrowserSyncPlugin from 'browser-sync-webpack-plugin';
 
 const DIST_PATH = path.resolve( './dist' );
 
@@ -60,28 +59,6 @@ const config = {
 					} },
 
 				]
-			}, {
-				test: /\.(png|jpg|gif|svg)$/,
-				loader: 'url-loader',
-				options: {
-					limit: 10000,
-					name: 'images/[hash].[ext]'
-				}
-			}, {
-				test: /\.(eot|ttf|woff|woff2)$/,
-				loader: 'url-loader',
-				options: {
-					limit: 10000,
-					name: 'fonts/[hash].[ext]'
-				}
-			}, {
-				test: /src\/icons\/.*\.svg$/,
-				loader: 'svg-sprite-loader',
-				options: {
-					extract: true,
-					spriteFilename: './icons/svg-defs.svg',
-					runtimeCompat: true
-				}
 			}
 		]
 	},
@@ -89,21 +66,31 @@ const config = {
 	plugins: [
 		new webpack.NoEmitOnErrorsPlugin(),
 		new MiniCssExtractPlugin({
-	      filename: '[name].css',
-	      chunkFilename: '[id].css',
-	      ignoreOrder: false,
-	    }),
-		new SpriteLoaderPlugin( {
-			plainSprite: true
-		} ),
-		new CopyPlugin( [
-			{ from: './src/images', to: './images' },
-			{ from: './src/icons', to: './icons' },
-		] ),
+			filename: '[name].css',
+			chunkFilename: '[id].css',
+			ignoreOrder: false,
+		}),
+		new BrowserSyncPlugin(
+			{
+				host: 'localhost',
+				server: './',
+				port: 3000,
+				open: 'false',
+				files: [
+					'**/*.html',
+					'./dist/**/*.js',
+					'./dist/**/*.css',
+				]
+			},
+			{
+				injectCss: true,
+				reload: false,
+			},
+		),
 	],
 	stats: {
 		colors: true
-	}
+	},
 };
 
 module.exports = config;

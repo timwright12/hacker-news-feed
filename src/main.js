@@ -1,30 +1,27 @@
 /**
- * Import
+ * Imports
  */
-import WebFont from 'webfontloader';
-import ExampleClass from './components/example-class/example-class';
-import exampleFunction from './components/example-function/example-function';
-import exampleScopedFunction from './components/example-scoped/example-scoped';
+import init from './js/utilities/init';
+import buildFeed from './js/components/build-feed';
+import infiniteScroll from './js/components/infinite-scroll';
 
 /**
  * Execute functions and methods on DOM ready
  */
+
 document.addEventListener( 'DOMContentLoaded', () => {
 
-	// Example call if using a scoped method
-	exampleScopedFunction.nestedMethod();
+	// Initialize UI
+	init();
 
-	// Normal imported function call
-	exampleFunction();
-
-	// Example call if using a class
-	ExampleClass.init( '#example' );
-	
-	// Example third party code execution
-	WebFont.load( {
-		google: {
-			families: ['Open Sans']
-		}
+	// Build the Feed
+	buildFeed( {
+		url: 'https://hn.algolia.com/api/v1/search_by_date?tags=story',
+		page: '1',
+		setFocus: false
 	} );
+
+	// Activate infinite scroll
+	infiniteScroll();
 
 } );

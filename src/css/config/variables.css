@@ -1,0 +1,18 @@
+:root {
+
+	/* Colors */
+	--c-black: #000;
+	--c-white: #fff;
+	--c-branding: #ca5000;
+	--c-bg: #f6f6ef;
+
+	/* Fonts */
+	--font-primary: "Open Sans", sans-serif;
+
+	/* A "Perfect Fourth" Scale (only using 4 sizes here) */
+	--fz-xsmall: 1em; /* 16px */
+	--fz-small: 1.333em; /* 21.28px */
+	--fz-large: 2.369em; /* 37.904px */
+	--fz-xlarge: 3.157em; /* 50.512px */;
+
+}

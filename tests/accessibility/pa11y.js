@@ -5,7 +5,7 @@
 
 const pa11y = require( 'pa11y' );
 const chalk = require( 'chalk' );
-const packageJson = require( '../../../package.json' );
+const packageJson = require( '../../package.json' );
 const testingUrls = packageJson.testing.urls;
 
 // Initialize variables
@@ -54,7 +54,8 @@ const config = {
 	userAgent: 'pa11y',
 	width: 1280,
 	ignore: [
-		'notice'
+		'notice',
+		'warning'
 	],
 	log: {
 		debug: console.log.bind( console ),

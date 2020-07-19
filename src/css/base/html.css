@@ -1,0 +1,64 @@
+body {
+	background: var( --c-bg );
+	color: var( --c-black );
+	font-family: var(--font-primary);
+	font-size: var( --fz-xsmall );
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	line-height: 1.4;
+	margin: 0;
+}
+
+h1, h2, h3 {
+	font-weight: 400;
+	margin: 0 0 1em;
+	padding: 0;
+}
+
+h1, h2 {
+	line-height: 1.1;
+}
+
+h1, h2 {
+	margin-bottom: .5em;
+}
+
+h1,
+.txt-xxlarge {
+	font-size: var(--fz-xlarge);
+}
+
+h2,
+.txt-xlarge {
+	font-size: var(--fz-large);
+}
+
+h3,
+.txt-medium {
+	font-size: var(--fz-small);
+}
+
+p,
+ul,
+ol,
+.txt-xsmall {
+	font-size: var(--fz-xsmall);
+	margin: 0 0 1em;
+}
+
+/* Just using browser-default blue */
+a {
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+}
+
+/* Easy-setting a loading message */
+[aria-busy="true"]::after {
+	background: var(--c-black);
+	color: var(--c-white);
+	content: "Loading more stories...";
+	display: block;
+	padding: 1rem;
+}

@@ -1,0 +1,9 @@
+.banner {
+	background: var(--c-branding);
+	color: var(--c-white);
+
+	& a {
+		color: var(--c-white);
+	}
+
+}

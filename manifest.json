@@ -1,0 +1,24 @@
+{
+  "short_name": "HN API",
+  "name": "Testing out the Hacker News API",
+  "description": "A small JavaScript Application to test out the Hacker News API.",
+  "icons": [
+    {
+      "src": "icons/icons-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icons/icons-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#ca5000",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#ca5000",
+  "prefer_related_applications": "false",
+  "splash_pages": null
+}

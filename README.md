@@ -1,32 +1,17 @@
-# Webpack Starter
+# Hacker News Feed API Test
 
-Current webpack version: 4.41.*
+## Start the application
 
-## Installation
 ```
-npm install
-```
-
-## Build Commands
-```
-npm run build
-npm run watch
+npm start
 ```
 
 ## Tests
-Set your testing URLs in the `package.json` file's `testing.urls` object.
+Set your testing URLs in the `package.json` file's `testing.urls` object. npm start will run at localhost:3000
 
-### Visual
-
-```
-npm run test:visual-init
-npm run test:visual-reference
-npm run test:visual
-npm run test:visual-approve
-```
-
-### Accessibility
+## Test Commands (make sure the app is running at localhost:3000)
 
 ```
-npm run test:a11y
+npm test
 ```
+The test command will run all functional and accessibility tests in the /tests directory

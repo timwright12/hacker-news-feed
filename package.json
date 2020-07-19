@@ -1,55 +1,45 @@
 {
-  "name": "project-starter-webpack",
-  "version": "1.0.2",
-  "description": "A test project for Min Webpack",
-  "main": "index.js",
+  "name": "hacker-news-feed",
+  "version": "1.0.0",
+  "description": "Hacker News Feed Testing",
+  "main": "src/index.js",
   "scripts": {
+    "start": "npm i && npm run build && npm run watch",
     "build": "webpack -p",
     "dev": "webpack -d",
-    "watch": "webpack -d --watch",
-    "test:a11y": "node tests/accessibility/compliance/pa11y.js",
-    "test:visual-init": "pushd tests/visual/ && backstop init && rm backstop.json && popd",
-    "test:visual-reference": "pushd tests/visual/ && ../../node_modules/backstopjs/cli/index.js reference --config=index.js && popd",
-    "test:visual": "pushd tests/visual/ && ../../node_modules/backstopjs/cli/index.js test --config=index.js && popd",
-    "test:visual-approve": "pushd tests/visual/ && ../../node_modules/backstopjs/cli/index.js approve --config=index.js && popd",
-    "test:e2e": "jest"
+    "watch": "webpack -p --watch",
+    "test": "jest && node tests/accessibility/pa11y.js"
   },
   "author": "Tim Wright",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.7.5",
-    "@babel/preset-env": "^7.7.6",
-    "@babel/register": "^7.7.4",
+    "@babel/core": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/register": "^7.10.4",
     "babel-cli": "^6.26.0",
-    "babel-eslint": "^10.0.3",
-    "babel-loader": "^8.0.6",
-    "backstopjs": "^4.4.2",
-    "browserslist": "^4.8.3",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "browser-sync": "^2.26.7",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "browserslist": "^4.13.0",
     "copy-webpack-plugin": "^5.1.1",
-    "core-js": "^3.0.0",
-    "css-loader": "^3.4.2",
+    "core-js": "^3.6.5",
+    "css-loader": "^3.6.0",
     "cssnano": "^4.1.10",
     "eslint": "^6.8.0",
-    "eslint-loader": "^3.0.3",
-    "file-loader": "^4.3.0",
-    "image-webpack-loader": "^5.1.0",
+    "eslint-loader": "^3.0.4",
     "jest": "^24.9.0",
     "mini-css-extract-plugin": "^0.8.0",
-    "postcss": "^7.0.26",
+    "pa11y": "^5.3.0",
+    "postcss": "^7.0.32",
     "postcss-custom-media": "^7.0.8",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.7.0",
     "puppeteer": "^1.20.0",
     "style-loader": "^0.23.1",
-    "svg-sprite-loader": "^4.1.6",
-    "url-loader": "^2.3.0",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
-  },
-  "dependencies": {
-    "normalize.css": "^8.0.1",
-    "webfontloader": "^1.6.28"
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
   },
   "browserslist": [
     "last 2 versions",
@@ -59,7 +49,7 @@
   ],
   "testing": {
     "urls": {
-      "home": "http://localhost:8000"
+      "local": "http://localhost:3000"
     },
     "accessibility": {
       "compliance": "WCAG2AA"
